@@ -9,11 +9,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def join(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     user_id = user.id
-    
-async def services(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    user = update.effective_user
-    user_id = user.id
-    
+       
     if user_id not in users:
         users[user_id] = {
             "name": user.first_name,
@@ -27,6 +23,10 @@ async def services(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def wallet(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
 
+async def services(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user = update.effective_user
+    user_id = user.id
+    
     if user_id in users:
         balance = users[user_id]["services"]
         await update.message.reply_text(f"🧊 Welcome to ICE SUPER 🧊\n"
