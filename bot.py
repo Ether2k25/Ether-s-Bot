@@ -28,7 +28,7 @@ async def services(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = user.id
     
     if user_id in users:
-        balance = users[user_id]["services"]
+        users[user_id]["services"]
         await update.message.reply_text(f"🧊 Welcome to ICE SUPER 🧊\n"
         "Start Your Own Book Today\n\n"
         "📝We Provide Services\n"
