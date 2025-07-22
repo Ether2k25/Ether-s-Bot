@@ -9,7 +9,11 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def join(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     user_id = user.id
-
+    
+async def services(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user = update.effective_user
+    user_id = user.id
+    
     if user_id not in users:
         users[user_id] = {
             "name": user.first_name,
