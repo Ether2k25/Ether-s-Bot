@@ -25,17 +25,17 @@ async def wallet(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if user_id in users:
         balance = users[user_id]["Services"]
-        await update.message.reply_text(f"🧊 Welcome to ICE SUPER 🧊
- Start Your Own Book Today
+        await update.message.reply_text(f"🧊 Welcome to ICE SUPER 🧊")
+                                          (f"Start Your Own Book Today")
 
-📝We Provide Services
-- Whitelabels
-- Super Masters
-- Masters
-🗣️24x7 Support Line
-⚡Fastest Setup
+                                            (f"📝We Provide Services")
+                                               (f" - Whitelabels")
+                                                (f"- Super Masters")
+                                                (f"- Masters")
+                                            (f"🗣️24x7 Support Line")
+                                            (f"⚡Fastest Setup")
 
-Join ICE SUPER and Build, Scale, Dominate")
+                                    (f"Join ICE SUPER and Build, Scale, Dominate")
     else:
         await update.message.reply_text("❌ You need to /join first.")
 
