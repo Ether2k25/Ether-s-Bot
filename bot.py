@@ -28,7 +28,7 @@ async def wallet(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
 
     if user_id in users:
-        balance = users[user_id]["Services"]
+        balance = users[user_id]["services"]
         await update.message.reply_text(f"🧊 Welcome to ICE SUPER 🧊\n"
         "Start Your Own Book Today\n\n"
         "📝We Provide Services\n"
@@ -51,6 +51,6 @@ app = ApplicationBuilder().token("7571791230:AAHDXdC_GHLQyU0LoXlnNb1wL1OQi4l4tIw
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("join", join))
 app.add_handler(CommandHandler("games", games))
-app.add_handler(CommandHandler("Services", Services))
+app.add_handler(CommandHandler("services", services))
 
 app.run_polling()
