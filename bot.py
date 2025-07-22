@@ -1,12 +1,10 @@
-import os
+users = {}
 
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-users = {}
-BOT_TOKEN = os.getenv("BOT_TOKEN")
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("🎰 Welcome to ICE SUPER! Use /games or /join to start.")
+    await update.message.reply_text("🎰 Welcome to ICE SUPER! Use /join to start.")
 
 async def join(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
@@ -26,8 +24,18 @@ async def wallet(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
 
     if user_id in users:
-        balance = users[user_id]["wallet"]
-        await update.message.reply_text(f"💰 Your current wallet balance: ₹{balance}")
+        balance = users[user_id]["Services"]
+        await update.message.reply_text(f"🧊 Welcome to ICE SUPER 🧊
+ Start Your Own Book Today
+
+📝We Provide Services
+- Whitelabels
+- Super Masters
+- Masters
+🗣️24x7 Support Line
+⚡Fastest Setup
+
+Join ICE SUPER and Build, Scale, Dominate")
     else:
         await update.message.reply_text("❌ You need to /join first.")
 
@@ -36,10 +44,10 @@ async def games(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("🎮 Active Games:\n1. 🏏 T20 Match\n2. 🎰 Casino Wheel\n3. 🎲 Dice Roll\n\nUse /bet to place a bet.")
 
 
-app = ApplicationBuilder().token(BOT_TOKEN).build()
+app = ApplicationBuilder().token("7571791230:AAHDXdC_GHLQyU0LoXlnNb1wL1OQi4l4tIw").build()
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("join", join))
 app.add_handler(CommandHandler("games", games))
-app.add_handler(CommandHandler("wallet", wallet))
+app.add_handler(CommandHandler("Services", Services))
 
 app.run_polling()
