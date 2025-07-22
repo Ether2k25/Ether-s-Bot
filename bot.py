@@ -31,7 +31,7 @@ async def services(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "Join ICE SUPER and Build, Scale, Dominate"
     )
 
-app = ApplicationBuilder().token("YOUR_BOT_TOKEN").build()
+app = ApplicationBuilder().token("7571791230:AAHDXdC_GHLQyU0LoXlnNb1wL1OQi4l4tIw").build()
 
 app.add_handler(CommandHandler("join", join))
 app.add_handler(CommandHandler("services", services))
